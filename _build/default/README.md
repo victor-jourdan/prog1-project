@@ -14,35 +14,10 @@ Introduction :
     Cependant, le fonctionnement global de l'infératrice nous est expliqué par les fichiers historiques : ast.ml - term.mli - query.mli - convert.mli - unify.mli. Nous avons donc du écrire les fichiers .ml correspondants à chacun de ces fichiers .mli. Par soucis pratique, nous avons aussi écrit un fichier utils.ml (associé à utils.mli).
 
 Arbre de dépendance de compilation: 
-(une flèche -> signifie que le second fichier dépend du premier)
+(une flèche a -> b signifie que b dépend de a)
 
     utils.ml -> term.ml -> unify.ml -> query.ml -> convert.ml
                         -> ast.ml -> convert.ml
-
-Instructions de compilation :
-    
-    "dune build"
-    puis "dune test" pour les tests
-    "dune exec Projet_PROG" pour l'infératrice
-
-Différentes règles implémentées :
-	multiple de 12 (teste si on est multiple de 6 et de 4) : mquatresix(X)
-	est la réponse à la vie : reponse_a_la_vie(X)
-	
-    
-    
-
-Fonctions d'affichage :
-
-    Sont implémentées les fonctions pp pour les termes et les query, on peut ainsi les appeler de la sorte : 
-    "Term.pp Format.std_formatter mon_terme" et "Query.pp Format.std_formatter ma_query".
-    Les variables sont représentées apr des entiers, et le format d'affichage des termes est tel que f(0,1,h(2)) sera affichée en 
-    -{f}--{0}
-         \{1}
-         \{h}--{2}
-
-    Les égalités de query seront de la forme [terme_a == terme_b], on a employé les mots clés and et or. Les seules parenthèses sur les and et or sont celles nécessaires pour des questions de priorité opératoire.             
-
 
 Présentation des différents fichiers :
 
@@ -55,8 +30,6 @@ Présentation des différents fichiers :
     4) unify.ml : Ici on n'a que deux fonctions. La plus importante est la fonction unify qui permet d'unifier deux termes (Term.t) si c'est possible. En d'autres termes, elle essaye d'égaliser deux termes en créant un binding adéquat.
 
     5) convert.ml : Ce fichier contient deux fonctions principales. La fonction query qui crée une conjonction d'atomes et une fonction d'affichage. La fonction rules va passer d'une représentation des règles comme une liste de règles à une vision sous forme d'une fonction atom_to_query_t (elle utilise la fonction rule, qui crée un query à l'aide d'une règle d'inférence et d'un atome).
-
-    !!! La fonction rules est mal expliquée !!!
 
     6) query.ml : Ici, on recrée l'infératrice ! 
     La fonction search est la plus importante, elle prend en entrée un query et affiche tous les binding qui satisfont ce query.

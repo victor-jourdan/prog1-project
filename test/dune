@@ -1,0 +1,4 @@
+(test
+ (name test)
+ (flags (:standard -warn-error "-unused-value-declaration")) 
+ (libraries Projet_PROG alcotest))

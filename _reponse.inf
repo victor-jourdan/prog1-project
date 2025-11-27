@@ -1,0 +1,13 @@
+derive p(s(X), Y, s(Z))
+    from p(X, Y, Z).
+
+derive p(X, s(Y), s(Z))
+    from p(X, Y, Z).
+
+derive p(z, X, X).
+derive p(X, z, X).
+
+derive reponse_a_la_vie(X)
+	from p(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(s(z))))))))))))))))))))))))))))))))))))))))))),z,X)
+
+

@@ -1,0 +1,13 @@
+# Ici on a les règles d'inférence qui testent si un nombre est un multiple de quatre et de six
+
+derive mquatre(z).
+derive msix(z).
+
+derive mquatre(s(s(s(X))))
+    from mquatre(X).
+
+derive msix(s(s(s(s(s(s(X)))))))
+    from msix(X).
+
+derive mquatresix(X)
+    from mquatre(X), msix(X).

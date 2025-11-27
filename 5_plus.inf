@@ -1,0 +1,8 @@
+derive p(s(X), Y, s(Z))
+    from p(X, Y, Z).
+
+derive p(X, s(Y), s(Z))
+    from p(X, Y, Z).
+
+derive p(z, X, X).
+derive p(X, z, X).

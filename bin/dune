@@ -1,0 +1,4 @@
+(executable
+ (public_name Projet_PROG)
+ (name inferatrice)
+ (libraries Projet_PROG))

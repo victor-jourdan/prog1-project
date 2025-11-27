@@ -1,0 +1,6 @@
+(library
+ (flags (:standard -warn-error "-unused-value-declaration") (:standard -warn-error "-unused-var-strict"))
+ (name Projet_PROG)
+ (wrapped false))
+ (ocamllex lexer)
+ (ocamlyacc parser)
